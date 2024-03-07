@@ -2,12 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import re
-import os
-from dotenv import load_dotenv
-import smtplib
+import logging
 
-# -------------- CONSTANTS ---------------- #
 
+# Configure the WebDriver to suppress logging messages
+service = webdriver.chrome.service.Service(executable_path="path_to_chromedriver")
+service_log_path = "{}/chromedriver.log".format(os.path.dirname(os.path.abspath(__file__)))
+service_args = ['--verbose']
+driver = webdriver.Chrome(service=service, service_args=service_args, options=chrome_options)
 
 
 # ------------ WEBSITE TO MONITOR ---------------- #
