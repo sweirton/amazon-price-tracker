@@ -5,13 +5,6 @@ import re
 import logging
 
 
-# Configure the WebDriver to suppress logging messages
-service = webdriver.chrome.service.Service(executable_path="path_to_chromedriver")
-service_log_path = "{}/chromedriver.log".format(os.path.dirname(os.path.abspath(__file__)))
-service_args = ['--verbose']
-driver = webdriver.Chrome(service=service, service_args=service_args, options=chrome_options)
-
-
 # ------------ WEBSITE TO MONITOR ---------------- #
 website_to_monitor = input("Please input the website link you would like to monitor: ")
 
